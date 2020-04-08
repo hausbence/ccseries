@@ -15,6 +15,12 @@ def design():
     return render_template('design.html')
 
 
+@app.route('/entry')
+def entry():
+    shows  = queries.list_shows_with_episodes_num()
+    return render_template('entry_level.html', shows = shows)
+
+
 def main():
     app.run(debug=True)
 
