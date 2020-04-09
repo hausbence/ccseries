@@ -1,0 +1,22 @@
+.genre {
+    border:solid black 1px;
+    border-radius: 10px;
+    width: 380px;
+    text-align : center;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.genre-background {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+}
+
+.odd {
+    background-color: lightgreen;
+}
+
+.even {
+    background-color: lightblue;
+}
