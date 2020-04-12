@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request
 from data import queries
 
 app = Flask('codecool_series')
@@ -13,6 +13,15 @@ def index():
 @app.route('/design')
 def design():
     return render_template('design.html')
+
+
+@app.route('/actors', methods=['GET', 'POST'])
+def get_actors():
+    if request.method == "POST":
+        year = request.form['yearinput']
+        actors = queries.get_actors(year)
+        return render_template('actors.html', actors = actors)
+    return render_template('actors.html')
 
 
 def main():
