@@ -71,10 +71,11 @@
         </div>
         <div class="actor-background card">
             {% for actor in actors %}
-                <div class="actor" id="actor-id" data-shows="{{ actor.rating }}">
-                    {{ actor.name }} ({{ actor.birthday }}) <br>
-                    Number of Roles : {{ actor.num_of_roles }} <br>
-                    Average rating : {{ actor.rating }}
+                <div class="actor" id="actor" data-actorid="{{ actor.id }}" data-ratings="{{ actor.rating }}">
+                    <p class="name">{{ actor.name }}</p>
+                    <p class="birthday">({{ actor.birthday }})</p>
+                    <p class="roles">Number of Roles : {{ actor.num_of_roles }}</p>
+                    <p class="avg-rating" id="rating">{{ actor.rating }}</p>
                 </div>
             {% endfor %}
         </div>
