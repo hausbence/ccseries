@@ -9,7 +9,7 @@ function apiGet(url, callback) {
         .then(json_response => callback(json_response));
 }
 function getGenreData(genreId, callback) {
-    apiGet(`genres/${genre_id}`, (response) => {
+    apiGet(`genres/${genreId}`, (response) => {
         this.data = response;
         callback(response)
     })
@@ -17,6 +17,7 @@ function getGenreData(genreId, callback) {
 
 function getData() {
     const genreId = document.getElementById("genre-input").value;
+    console.log(genreId);
     getGenreData(genreId, buildContainer)
 }
 
@@ -31,7 +32,7 @@ function buildContainer (datas) {
     datas.forEach(function(item) {
         console.log(item);
         const table = document.getElementById("table");
-        let html = `<tr><td>${item.title}</td><td>${item.seasons}</td><td>${item.episodes}</td></tr>`;
+        let html = `<tr><td>${item.title}</td><td>${item.num_of_seasons}</td><td>${item.num_of_episodes}</td></tr>`;
         table.insertAdjacentHTML('beforeend', html)
     })
 }

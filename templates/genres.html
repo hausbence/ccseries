@@ -57,14 +57,23 @@
             </p>
         </div>
         <div class="card">
-            <form action="/genres" method="post">
-                    <select id="genre-input" name="genres">
+            <form>
+                <select id="genre-input" name="genres">
                     {% for genre in all_genres %}
-                        <option value="{{ genre_id }}">{{ genre.name }}</option>
+                        <option value="{{ genre.id }}">{{ genre.name }}</option>
                     {% endfor %}
-                    </select>
-                <input type="submit" value="Submit">
+                </select>
+            <button type="button" onclick="getData()">Submit</button>
             </form>
+        </div>
+        <div class="card" id="container">
+            <table id="table">
+                <tr>
+                    <th class="table-head">Title</th>
+                    <th class="table-head">Seasons</th>
+                    <th class="table-head">Episodes</th>
+                </tr>
+            </table>
         </div>
     </section>
     <footer>

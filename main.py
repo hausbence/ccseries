@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for, request
 from data import queries
+import json
 
 app = Flask('codecool_series')
 
@@ -15,12 +16,15 @@ def design():
     return render_template('design.html')
 
 
-@app.route('/genres/', methods=['GET', 'POST'])
+@app.route('/genres/<genre_id>')
+def genres(genre_id):
+    shows = queries.get_shows_by_genre(genre_id)
+    return json.dumps(shows)
+
+
+@app.route('/genres', methods=['GET', 'POST'])
 def list_genres():
     all_genres = queries.get_all_genres()
-    if request.method == "POST":
-        shows = queries.get_shows_by_genre(genre_id)
-        return render_template('genres.html', all_genres=all_genres, shows=shows)
     return render_template('genres.html', all_genres = all_genres)
 
 
