@@ -17,7 +17,7 @@ def design():
 
 @app.route('/ranges', methods=['GET', 'POST'])
 def range():
-    ranges = queries.get_seasons(2)
+    ranges = queries.get_seasons()
     return render_template('ranges.html', ranges=ranges)
 
 

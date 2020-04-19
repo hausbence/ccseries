@@ -28,6 +28,7 @@
 
     <!-- page specific styling -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style/detailed-view.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/ranges.css') }}">
     <script type="text/javascript" src="/static/scripts/scripts.js" defer></script>
 
 </head>
@@ -52,14 +53,12 @@
                 <input type="range" id="seasons" name="seasons" min="1" max="46">
             </div>
         </div>
-        <div class="card">
-            <ul>
-                {% for show in shows %}
-                    <li>
-                        <a href="{{ '/tv-show/' + (show['id'] | string) }}">{{ show['title'] }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
+        <div class="ranges-background card">
+            {% for show in ranges %}
+                <div class="content" data-seasons="{{ show.seasons }}">
+                        {{ show.title }} (Seasons: {{ show.seasons }})<br>
+                </div>
+            {% endfor %}
         </div>
     </section>
     <footer>
