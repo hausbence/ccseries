@@ -1,3 +1,5 @@
+import json
+
 from flask import Flask, render_template, url_for, request
 from data import queries
 
@@ -15,12 +17,14 @@ def design():
     return render_template('design.html')
 
 
-@app.route('/fuzzy', methods=['GET', 'POST'])
+@app.route('/search/<charname>')
+def search(charname):
+    shows = queries.fuzzy(charname)
+    return json.dumps(shows)
+
+
+@app.route('/search', methods=['GET', 'POST'])
 def fuzzy():
-    if request.method == "POST":
-        charname = request.form['charname']
-        datas = queries.fuzzy(charname)
-        return render_template('fuzzy.html', datas = datas)
     return render_template('fuzzy.html')
 
 
