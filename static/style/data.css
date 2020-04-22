@@ -1,0 +1,14 @@
+.data {
+    border: solid black 1px;
+    border-radius: 10px;
+    width: 207px;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.data-background {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
