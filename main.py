@@ -15,6 +15,12 @@ def design():
     return render_template('design.html')
 
 
+@app.route('/years')
+def years():
+    years = queries.get_years()
+    return render_template('years.html', years=years)
+
+
 def main():
     app.run(debug=True)
 

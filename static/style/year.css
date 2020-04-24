@@ -1,0 +1,19 @@
+.year {
+    border: solid black 1px;
+    border-radius: 16px;
+    width: 49px;
+    height: 60px;
+    text-align: center;
+    padding: 6px;
+    margin-bottom: 7px;
+}
+
+.year-background {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+}
+
+.selected{
+    background-color: blue;
+}
