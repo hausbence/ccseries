@@ -15,6 +15,12 @@ def design():
     return render_template('design.html')
 
 
+@app.route('/actors')
+def list_actors():
+    actors = queries.get_actors()
+    return render_template('actors.html', actors=actors)
+
+
 def main():
     app.run(debug=True)
 

@@ -1,0 +1,30 @@
+.actors p{
+    display:inline;
+}
+
+.actors .name{
+    color: darkgreen;
+}
+
+.actors .birthday{
+    color: red;
+}
+
+.actors .death{
+    color: midnightblue;
+}
+
+
+.actors {
+    border: solid black 1px;
+    border-radius: 16px;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
+.actor-background {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
