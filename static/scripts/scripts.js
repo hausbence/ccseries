@@ -16,7 +16,7 @@ function changeBySeasonNum() {
     seasons.forEach(function (item) {
         item.style.visibility = "hidden";
         console.log(typeof item.dataset.seasons);
-        if(item.dataset.seasons === rangeCurrent) {
+        if(parseInt(item.dataset.seasons) <= parseInt(rangeCurrent)) {
             console.log(item);
             item.style.visibility = "visible";
         }
