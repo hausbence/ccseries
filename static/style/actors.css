@@ -1,0 +1,14 @@
+.actors {
+    border: solid black 1px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.actor-background {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
