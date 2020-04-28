@@ -31,17 +31,16 @@ def get_connection_data(db_name=None):
     """
     Give back a properly formatted dictionary based on the environment variables values which are started
     with :MY__PSQL_: prefix
-
     :db_name: optional parameter. By default it uses the environment variable value.
     """
     if db_name is None:
         db_name = os.environ.get('MY_PSQL_DBNAME')
 
     return {
-        'dbname': 'ccseries',
-        'user': 'bence',
-        'host': 'localhost',
-        'password': 'asd123'
+        'dbname': db_name,
+        'user': os.environ.get('MY_PSQL_USER'),
+        'host': os.environ.get('MY_PSQL_HOST'),
+        'password': os.environ.get('MY_PSQL_PASSWORD')
     }
 
 
