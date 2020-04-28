@@ -11,5 +11,5 @@ def fuzzy(charname):
         from shows
         INNER JOIN show_characters ON shows.id = show_characters.show_id
         INNER JOIN actors ON show_characters.actor_id = actors.id
-        WHERE show_characters.character_name = %(charname)s
+        WHERE show_characters.character_name ILIKE %(charname)s
     ''', {'charname' : charname})
