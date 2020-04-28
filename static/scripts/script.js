@@ -22,8 +22,6 @@ function getData() {
 
 function buildContainer(datas) {
     const container = document.getElementById('container');
-    const table = document.getElementById("table");
-    container.removeChild(table);
     container.innerHTML = `<table id="table"><tr><th class="table-head">Title</th>
                             <th class="table-head">Seasons</th>
                             <th class="table-head">Episodes</th></tr></table>`
