@@ -1,0 +1,16 @@
+.shows {
+    border: black solid 1px;
+    border-radius: 15px;
+    width: 70px;
+    height: 96px;
+    text-align: center;
+    padding: 7px;
+    margin: 9px;
+    margin-bottom: 10px;
+}
+
+.shows-background {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

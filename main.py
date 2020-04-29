@@ -15,6 +15,17 @@ def design():
     return render_template('design.html')
 
 
+@app.route('/genres')
+def genres():
+    return render_template('genres.html')
+
+
+@app.route('/shows/<letter>')
+def list_shows(letter):
+    shows = queries.get_shows_by_letter(letter)
+    return render_template('shows.html', shows = shows)
+
+
 def main():
     app.run(debug=True)
 
